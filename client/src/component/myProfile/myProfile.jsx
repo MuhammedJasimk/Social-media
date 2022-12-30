@@ -210,7 +210,7 @@ function UserProfile(setEditp) {
                             data.data.userData.map((post, index) => {
                                 return (
                                     <div className='h-[250px] relative posts'>
-                                        <img src={`https://vibing.tk/images/post/${post.image}`} key={posts.index} className="object-cover rounded-lg h-full w-full" alt="" />
+                                        <img src={`https://vibing.tk/api/images/post/${post.image}`} key={posts.index} className="object-cover rounded-lg h-full w-full" alt="" />
                                         <div className=' w-full eachPost flex rounded-lg justify-center bg-[#00000087] items-center h-full left-0 right-0 bottom-0 top-0 m-auto absolute'>
                                             <IoEyeSharp onClick={() => { PostDetails(post._id) }} className="text-white text-[40px] mr-7 cursor-pointer" />
                                             <IoTrashBin onClick={() => { blockPost(post._id) }} className="text-white text-[40px] cursor-pointer" />
