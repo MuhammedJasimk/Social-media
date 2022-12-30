@@ -27,7 +27,7 @@ let userId = localStorage.getItem('user')
                             <div className='rounded-full flex justify-center items-center h-[50px] w-[50px] overflow-hidden'>
                                 {post?.profile != 'null' ?
                                 <>
-                                    <img src={PATH + post.profile} className='object-cover w-full h-full ' alt="" />
+                                    <img src={PATH + post?.profile} className='object-cover w-full h-full ' alt="" />
                                     </>
                                     : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                 }
