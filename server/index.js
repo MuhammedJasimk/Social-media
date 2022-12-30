@@ -18,7 +18,6 @@ connection()
 
 app.use(cors())
 app.use(express.json()) 
-app.use('/images',express.static('StaticFiles'))
 
 app.use(session({
     secret: '1234567890',
@@ -26,6 +25,9 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: true }
   }))
+
+  app.use('/api/images',express.static(path.join(__dirname,'StaticFiles/post')))
+
 
 app.use('/api/user',userRouter)
 app.use('/api/admin',adminRouter)
