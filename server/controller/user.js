@@ -399,7 +399,7 @@ module.exports = {
 
 
     unfollow: async (req, res) => {
-        console.log("users Unfollow");
+        console.log("users Unfollow");   
         console.log(req.body);
         try {
             await User.updateOne({ _id: ObjectId(req.body.userId) },
@@ -410,9 +410,9 @@ module.exports = {
                 {
                     $pull: { followers: req.body.userId }
                 }).then(() => {
-                    res.json({ status: true })
+                    res.json({ status: true })    
                 })
-
+ 
         } catch (error) {
             console.log(error);
             res.json(error)

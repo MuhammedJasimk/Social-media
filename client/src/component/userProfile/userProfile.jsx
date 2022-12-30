@@ -190,7 +190,7 @@ function UserProfile(props) {
             <ReactNotifications />
             <div>
 
-                <div className=' shadow-light p-2 rounded-t-lg flex flex-col items-end bg-gray-200 w-full h-[40vh] ' style={{ backgroundImage: `url(./images/post/${data.user?.cover})` }}>
+                <div className=' shadow-light p-2 rounded-t-lg flex flex-col items-end bg-gray-200 w-full h-[40vh] ' style={{ backgroundImage: `url(${PATH}${data.user?.cover})` }}>
                     <div className='p-2 flex justify-center items-center bg-[#ffffffb5] rounded-lg'
                         onClick={() => setreportuser(!reportuser)}>
                         <label htmlFor="cover">

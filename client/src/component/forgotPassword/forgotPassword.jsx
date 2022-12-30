@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 import Countdown from 'react-countdown';
+
+const PATH = process.env.REACT_APP_PUBLIC_FOLDER
  
 let BackgroundImage={
     // backgroundImage:url('./images/login-page.jpg')
     backgroundSize:'cover',
     backgroundPositionX:'-250px',
      backgroundPositionY:'-150px',
-    backgroundImage: "url(./images/forgot-01.png)"
+    backgroundImage: `url(${PATH }forgot-01.png)`
 }
 
 function ForgotPassword() {

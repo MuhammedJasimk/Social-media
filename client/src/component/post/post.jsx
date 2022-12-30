@@ -6,6 +6,9 @@ import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 import{useNavigate} from 'react-router-dom'
 
 function Post() {
+
+  const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
   const [form, setForm] = useState({discription:"" ,img:"", userId: localStorage.getItem("user")})
   const [file, setFile] = useState({})
   const [invalidImage, setinvalidImage] = useState(null);
@@ -103,7 +106,7 @@ function Post() {
 }
   return (
     <div className='bg-white h-[90vh]'>
-    <div className='flex justify-center items-center h-full bg-no-repeat' style={{backgroundImage:`url(./images/wave.png)`}}>
+    <div className='flex justify-center items-center h-full bg-no-repeat' style={{backgroundImage:`url(${PATH}wave.png)`}}>
                 {/* <div className='text-right cursor-pointer' onClick={() => { setIsPost(false) }}>
                     <p className='text-lg text-gray-400'>X</p>
                 </div> */}

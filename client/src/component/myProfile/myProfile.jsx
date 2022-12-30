@@ -151,7 +151,7 @@ function UserProfile(setEditp) {
             <ReactNotifications />
             <div>
 
-                <div className='rounded-t-lg shadow-light flex flex-col items-end bg-gray-200 w-full h-[40vh] bg-cover' style={{ backgroundImage: `url(./images/post/${data.data.user.cover})` }}>
+                <div className='rounded-t-lg shadow-light flex flex-col items-end bg-gray-200 w-full h-[40vh] bg-cover' style={{ backgroundImage: `url(${PATH}${data.data.user.cover})` }}>
                     <div className='p-2 flex justify-center items-center bg-[#ffffffb5] rounded-lg'>
                         <label htmlFor="cover">
                             <IoCameraOutline className='text-[20px] sm:text-[50px]'></IoCameraOutline>

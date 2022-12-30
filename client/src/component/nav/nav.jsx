@@ -241,7 +241,7 @@ function Nav() {
 
                                     {
                                         item.profile &&
-                                        <img className="h-full w-full object-cover rounded-full" src={PATH + item.profile} alt="" />
+                                        <img className="h-full w-full object-cover rounded-full" src={ PATH + item.profile} alt="" />
                                     }
                                 </div>
                                 <div>{item.username}</div>
