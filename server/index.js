@@ -18,6 +18,7 @@ connection()
 
 app.use(cors())
 app.use(express.json()) 
+app.use('/images',express.static('StaticFiles'))
 
 app.use(session({
     secret: '1234567890',
