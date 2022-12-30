@@ -7,6 +7,8 @@ import Popup from "./blockedPostspopup";
 
 function PostBlock() {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [modal, setModal] = useState({status:false,id:''})
 
     const [data, setData]=useState({})
@@ -40,7 +42,7 @@ function PostBlock() {
                             <div key={index} className='border-b-2  flex items-center justify-between p-4 border-gray-100 '>
                                 <div className='flex items-center w-[15%]'>
                                     <div className='bg-gray-200 h-[40px] w-[40px] rounded-full'>
-                                        <img src={`/images/post/${item.userId.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                        <img src={PATH + item.userId.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                     </div>
                                     <div className='ml-3'>
                                         <p>{item.userId.username}</p>
@@ -55,7 +57,7 @@ function PostBlock() {
                                 </div>
                                 <div>
                                     <div className='h-[100px] w-[100px]'>
-                                        <img src={`/images/post/${item.image}`} className='object-cover w-full h-full ' alt="" />
+                                        <img src={PATH + item.image} className='object-cover w-full h-full ' alt="" />
                                     </div>
                                 </div>
                                 <div>

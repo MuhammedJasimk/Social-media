@@ -5,6 +5,8 @@ import {useNavigate,Link}from "react-router-dom";
 import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 
 function Search() {
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [searchModal, setSearchModal] = useState(false)
     const [search, setSearch] = useState([])
     let navigate =useNavigate()
@@ -47,7 +49,7 @@ function Search() {
                                 <div className='h-[40px] w-[40px] bg-gray-600 rounded-full mr-3'>
                                     {
                                         item.profile &&
-                                        <img className="h-full w-full object-cover rounded-full" src={`./images/post/${item.profile}`} alt="" />
+                                        <img className="h-full w-full object-cover rounded-full" src={PATH + item.profile} alt="" />
                                     }
                                 </div>
                                 <div>{item.username}</div>

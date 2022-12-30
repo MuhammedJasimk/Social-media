@@ -5,6 +5,8 @@ import {useNavigate,Link}from "react-router-dom";
 
 function RightPanel(props) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
     const [render, setrender] = useState(false)
@@ -46,7 +48,7 @@ function RightPanel(props) {
                 <div>
                     <div className='rounded-full flex justify-center items-center h-[50px] w-[50px] bg-gray-300 overflow-hidden'>
                         {props.value.user.profile !== "null" ?
-                            <img src={`./images/post/${props.value.user.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                            <img src={PATH + props.value.user.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                             : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                         }
                     </div>
@@ -69,7 +71,7 @@ function RightPanel(props) {
                             <div className='flex '>
                                 <div className='rounded-full overflow-hidden relative w-[30px] h-[30px]'>
                                 {item.profile !== "null" ?
-                            <img src={`./images/post/${item.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                            <img src={PATH + item.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                             : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                         }
                                 </div>

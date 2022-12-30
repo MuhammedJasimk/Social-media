@@ -8,6 +8,8 @@ import { io } from 'socket.io-client'
 
 
 function Message({ currentUser, currentChat }) {
+
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
   
     const [user, setUser] = useState([])
     const [chatUser, setChatUser] = useState([])
@@ -147,7 +149,7 @@ function Message({ currentUser, currentChat }) {
                         <div>
                             <div className='rounded-full  bg-gray-200 flex justify-center items-center h-[45px] w-[45px] overflow-hidden'>
                                 {chatUser?.profile ?
-                                    <img src={`./images/post/${chatUser?.profile}`} className='object-cover w-full h-full ' alt="" />
+                                    <img src={PATH + chatUser?.profile} className='object-cover w-full h-full ' alt="" />
                                     : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                 }
                             </div>
@@ -188,7 +190,7 @@ function Message({ currentUser, currentChat }) {
                     <div className='flex items-center mt-4 mb-4'>
                         <div className='w-[40px] items-center flex h-[40px] z-20 rounded-full bg-gray-400'>
                             {user?.profile ?
-                                <img src={`./images/post/${user?.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                <img src={PATH + user?.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                 : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                             }
                         </div>

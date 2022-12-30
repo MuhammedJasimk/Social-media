@@ -12,6 +12,8 @@ import 'react-notifications-component/dist/theme.css'
 
 function UserProfile(props) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     let navigate = useNavigate()
 
     const queryClient = useQueryClient()
@@ -228,7 +230,7 @@ function UserProfile(props) {
                                         <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                         : user.profile != null ?
 
-                                            <img className='w-full h-full object-cover rounded-full' src={`./images/post/${user.profile}`} alt="User Profile " />
+                                            <img className='w-full h-full object-cover rounded-full' src={PATH + user.profile} alt="User Profile " />
 
                                             : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                 }
@@ -307,7 +309,7 @@ function UserProfile(props) {
                             data?.userData?.map((post, index) => {
                                 return (
                                     <div className='h-[250px] cursor-pointer' onClick={()=>{PostDetails(post._id)}}>
-                                        <img src={`./images/post/${post.image}`} key={index} className="object-cover rounded-lg h-full w-full" alt="" />
+                                        <img src={PATH + post.image} key={index} className="object-cover rounded-lg h-full w-full" alt="" />
                                     </div>
                                 )
                             })

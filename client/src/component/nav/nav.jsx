@@ -16,6 +16,8 @@ import Notification from "../../component/notification/notification";
 
 function Nav() {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
 
     const [isPost, setIsPost,isNotification, setIsNotification] = useContext(AppContext)
     const [notificationCount] = useContext(NotificationCountContext)
@@ -162,7 +164,7 @@ function Nav() {
 
                                             { userDetail.profile && 
                                             userDetail?.profile !== "null" ?
-                                              <img src={`./images/post/${userDetail?.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                              <img src={PATH + userDetail?.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                                 : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                             }
                                         </div>
@@ -206,7 +208,7 @@ function Nav() {
                                         <div className='rounded-full h-[28px] w-[28px] inline-block bg-black'>
                                             {
                                                 userDetail.profile &&
-                                                <img className="h-full w-full object-cover rounded-full" src={`./images/post/${userDetail.profile}`} alt="" />
+                                                <img className="h-full w-full object-cover rounded-full" src={PATH + userDetail.profile} alt="" />
                                             }
                                         </div>
                                     </div>
@@ -239,7 +241,7 @@ function Nav() {
 
                                     {
                                         item.profile &&
-                                        <img className="h-full w-full object-cover rounded-full" src={`./images/post/${item.profile}`} alt="" />
+                                        <img className="h-full w-full object-cover rounded-full" src={PATH + item.profile} alt="" />
                                     }
                                 </div>
                                 <div>{item.username}</div>

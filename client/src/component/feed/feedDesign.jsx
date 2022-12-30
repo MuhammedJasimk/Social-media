@@ -6,6 +6,8 @@ import { format, render, cancel, register } from 'timeago.js';
 function feedDesign({data,reportpop,setreportpop,blockpost,doDislike,doLike,getComment,props,comment,setComment,addComment,postcomment,commentOpen}) {
 console.log('props feed');
 console.log(reportpop);
+
+const PATH = process.env.REACT_APP_PUBLIC_FOLDER
     
 let userId = localStorage.getItem('user')
 
@@ -23,7 +25,7 @@ let userId = localStorage.getItem('user')
                         <div>
                             <div className='rounded-full flex justify-center items-center h-[50px] w-[50px] overflow-hidden'>
                                 {post.profile != 'null' ?
-                                    <img src={`./images/post/${post.profile}`} className='object-cover w-full h-full ' alt="" />
+                                    <img src={PATH + post.profil} className='object-cover w-full h-full ' alt="" />
                                     : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                 }
 
@@ -53,7 +55,7 @@ let userId = localStorage.getItem('user')
                 <p className='text-gray-600 text-sm'>{post.discription}</p>
 
                 <div className=' mt-4 '>
-                    <img src={`./images/post/${post.image}`} className='object-cover w-full h-[370px] md:h-[500px] rounded-lg' alt="" />
+                    <img src={PATH + post.image} className='object-cover w-full h-[370px] md:h-[500px] rounded-lg' alt="" />
                 </div>
 
                 <div className='flex justify-center mt-3 '>
@@ -77,7 +79,7 @@ let userId = localStorage.getItem('user')
                     <div className='w-[45px] h-[45px] flex justify-center items-center z-20 rounded-full bg-gray-300'>
 
                         {props.value.user.profile !== "null" ?
-                            <img src={`./images/post/${props.value.user.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                            <img src={PATH + props.value.user.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                             : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                         }
                     </div>
@@ -103,7 +105,7 @@ let userId = localStorage.getItem('user')
                                             <div className='w-[40px] h-[40px] z-20 rounded-full bg-gray-400'>
 
                                                 {comment.profile !== "null" ?
-                                                    <img src={`./images/post/${comment.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                                    <img src={PATH + comment.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                                     : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                                 }
                                             </div>

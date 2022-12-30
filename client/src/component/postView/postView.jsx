@@ -7,6 +7,8 @@ import { IoPersonCircleOutline, IoHeartSharp, IoHeartOutline, IoChatbubbleOutlin
 import { useEffect } from 'react';
 function PostView({ postId, popup }) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [comment, setComment] = useState("")
     const [postComment, setPostComment] = useState("")
     const [liked, setLiked] = useState(false)
@@ -150,7 +152,7 @@ function PostView({ postId, popup }) {
                         <div className='flex h-full '>
                             <div className='hidden sm:block  w-[35%] sm:w-[65%] h-full'>
                                 <div className='w-full h-full relative'>
-                                    <img className='w-full h-full object-cover ' src={`./images/post/${data?.data?.response[0]?.image}`} alt="" />
+                                    <img className='w-full h-full object-cover ' src={PATH + data?.data?.response[0]?.image} alt="" />
                                     <div className='bg-[#00000075] text-white text-center text-sm p-4  absolute bottom-0 w-full'>{data?.data?.response[0]?.discription}</div>
                                 </div>
                             </div>
@@ -159,7 +161,7 @@ function PostView({ postId, popup }) {
                                 <div className='flex '>
                                     <div className='w-[32px] h-[32px] rounded-full '>
                                         {data?.data?.response[0]?.Userprofile != 'null' ?
-                                            <img src={`./images/post/${data?.data?.response[0]?.Userprofile}`} className='object-cover w-full h-full rounded-full' alt="" />
+                                            <img src={PATH + data?.data?.response[0]?.Userprofile} className='object-cover w-full h-full rounded-full' alt="" />
                                             : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                         }
                                     </div>
@@ -179,7 +181,7 @@ function PostView({ postId, popup }) {
                                                                 <div className='w-[25px] h-[25px] z-20 rounded-full bg-gray-400'>
 
                                                                     {comment.profile !== "null" ?
-                                                                        <img src={`./images/post/${comment.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                                                        <img src={PATH + comment.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                                                         : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                                                     }
                                                                 </div>
@@ -255,7 +257,7 @@ function PostView({ postId, popup }) {
                                                         <div className='w-[35px]  h-[35px] z-20 rounded-full bg-gray-400'>
 
                                                             {item.profile !== "null" ?
-                                                                <img src={`./images/post/${item.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                                                <img src={PATH + item.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                                                 : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                                             }
                                                         </div>

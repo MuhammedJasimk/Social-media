@@ -28,6 +28,8 @@ const style={
 
 function BlockedUser({children,onclose,open}) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [data,setData] = useState({})
     console.log(open);
 //  console.log(open);
@@ -72,7 +74,7 @@ function BlockedUser({children,onclose,open}) {
                 return(
                     <div className='flex items-center mt-3' key={index}>
                                     <div className='bg-gray-200 h-[40px] w-[40px] rounded-full'>
-                                        <img src={`/images/post/${item.image}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                        <img src={PATH + item.image} className='object-cover rounded-full w-full h-full ' alt="" />
                                     </div>
                                     <div className='ml-3'>
                                         <p>{item?.username}</p>

@@ -189,7 +189,7 @@ function UserProfile(setEditp) {
                                         <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                         : data.data.user.profile != null ?
 
-                                            <img className='w-full h-full object-cover rounded-full' src={`./images/post/${data.data.user.profile}`} alt="User Profile " />
+                                            <img className='w-full h-full object-cover rounded-full' src={PATH + data.data.user.profile} alt="User Profile " />
 
                                             : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                 }

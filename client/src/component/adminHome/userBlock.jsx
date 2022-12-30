@@ -6,6 +6,8 @@ import Popup from "./blockedUserspopup";
 
 function UserBlock() {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [modal, setModal] = useState({id:'',status:false})
     const [data, setData]=useState({})
     const [render, setRender]=useState({})
@@ -46,7 +48,7 @@ function UserBlock() {
                             <div key={index} className='border-b-2  flex items-center justify-between p-4 border-gray-100 '>
                                 <div className='flex  items-center w-[20%]'>
                                     <div className='bg-gray-200 h-[40px] w-[40px] rounded-full'>
-                                        <img src={`/images/post/${item.profile}`} className='objuct-cover rounded-full w-full h-full ' alt="" />
+                                        <img src={PATH + item.profile} className='objuct-cover rounded-full w-full h-full ' alt="" />
                                     </div>
                                     <div className='ml-3'>
                                         <p>{item.username}</p>

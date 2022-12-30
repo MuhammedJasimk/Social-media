@@ -9,6 +9,8 @@ import {NotificationCountContext} from "../../contex/appContext";
 
 function Notification() {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [notification, setNotification] = useState([])
     const [notificationCount, setNotificationCount] =useContext(NotificationCountContext)
 
@@ -80,7 +82,7 @@ function Notification() {
                                                     <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                                     : item.userProfil != null ?
 
-                                                        <img className='w-full h-full object-cover  rounded-full' src={`./images/post/${item.userProfil}`} alt="User Profile " />
+                                                        <img className='w-full h-full object-cover  rounded-full' src={PATH + item.userProfil} alt="User Profile " />
 
                                                         : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                             }
@@ -90,7 +92,7 @@ function Notification() {
                                         </div>
                                     </div>
                                         <div className='h-[40px] w-[40px]'>
-                                            <img className='w-full h-full object-cover rounded-lg ml-2' src={`./images/post/${item.post}`} alt="User Profile " />
+                                            <img className='w-full h-full object-cover rounded-lg ml-2' src={PATH + item.post} alt="User Profile " />
                                         </div>
 
                                 </div>
@@ -103,7 +105,7 @@ function Notification() {
                                                     <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                                     : item.userProfil != null ?
 
-                                                        <img className='w-full h-full object-cover rounded-full' src={`./images/post/${item.userProfil}`} alt="User Profile " />
+                                                        <img className='w-full h-full object-cover rounded-full' src={PATH + item.userProfil} alt="User Profile " />
 
                                                         : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                             }
@@ -113,7 +115,7 @@ function Notification() {
                                         </div>
                                         </div>
                                         <div className='h-[40px] w-[40px]'>
-                                            <img className='w-full h-full object-cover rounded-lg ml-2' src={`./images/post/${item.post}`} alt="User Profile " />
+                                            <img className='w-full h-full object-cover rounded-lg ml-2' src={PATH + item.post} alt="User Profile " />
                                         </div>
                                     </div>
                                     :
@@ -124,7 +126,7 @@ function Notification() {
                                                     <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                                     : item.userProfil != null ?
 
-                                                        <img className='w-full h-full object-cover rounded-full' src={`./images/post/${item.userProfil}`} alt="User Profile " />
+                                                        <img className='w-full h-full object-cover rounded-full' src={PATH + item.userProfil} alt="User Profile " />
 
                                                         : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline>
                                             }

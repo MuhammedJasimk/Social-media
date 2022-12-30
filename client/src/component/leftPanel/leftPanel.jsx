@@ -5,6 +5,8 @@ import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 
 function LeftPanel({ liveUsers }) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     // let getOnlineUsers =async()=>{
     //     let data =await JSON.stringify(liveUsers)
     //     console.log("data");

@@ -4,6 +4,8 @@ import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { IoPersonCircleOutline } from "react-icons/io5";
 function Conversation({ conversation, currentUser}) {
+
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
    
     const [user, setUser] = useState(null)
     let navigate =useNavigate()
@@ -40,7 +42,7 @@ function Conversation({ conversation, currentUser}) {
                     <div>
                         <div className='rounded-full  flex justify-center items-center h-[40px] w-[40px] overflow-hidden'>
                             { user?.profile ?
-                                        <img src={`./images/post/${user.profile}`} className='objuct-cover w-full h-full ' alt="" />
+                                        <img src={PATH + user.profile} className='objuct-cover w-full h-full ' alt="" />
                                    :<IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                    }
                         </div>

@@ -10,6 +10,8 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 
 function EditProfile({props,render}) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     const [invalidImage, setinvalidImage] = useState(null);
     const [img, setImg] = useState({})
     const [err, setErr] = useState("")
@@ -166,7 +168,7 @@ function EditProfile({props,render}) {
                                     <IoPersonCircleOutline className='w-full  text-gray-500 text-[80px]'></IoPersonCircleOutline> 
                                     :userDetails.profile !=  null  ?
                                     
-                                        <img className='w-full h-full object-cover rounded-full' src={`./images/post/${userDetails.profile}`} alt="User Profile "/>
+                                        <img className='w-full h-full object-cover rounded-full' src={userDetails.profile} alt="User Profile "/>
                                   
                                     : <IoPersonCircleOutline className='w-full text-gray-500 text-[80px]'></IoPersonCircleOutline> 
                                 }

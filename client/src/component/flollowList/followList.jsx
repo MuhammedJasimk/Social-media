@@ -28,6 +28,8 @@ const overLay = {
 
 function FollowList({ props, onclose, value }) {
 
+    const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
     console.log("user view folow");
     console.log(value);
     const [data, setData] = useState({})
@@ -57,7 +59,7 @@ function FollowList({ props, onclose, value }) {
                                 return (
                                     <div className='flex items-center mt-3'>
                                         <div className='bg-gray-200 h-[40px] w-[40px] rounded-full'>
-                                            <img src={`/images/post/${item.profile}`} className='object-cover rounded-full w-full h-full ' alt="" />
+                                            <img src={PATH + item.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                         </div>
                                         <div className='ml-3'>
                                             <p>{item?.username}</p>
