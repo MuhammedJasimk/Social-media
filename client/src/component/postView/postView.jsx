@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useNavigate,Link}from "react-router-dom";
 // import axios from "axios"
 import {axiosInstance,axios_two} from "../../axiosInstance/axiosInstance";
 import { format, render, cancel, register } from 'timeago.js';
@@ -8,6 +9,8 @@ import { useEffect } from 'react';
 function PostView({ postId, popup }) {
 
     const PATH = process.env.REACT_APP_PUBLIC_FOLDER
+
+    let userInfo = localStorage.getItem('user')
 
     const [comment, setComment] = useState("")
     const [postComment, setPostComment] = useState("")
@@ -156,7 +159,7 @@ function PostView({ postId, popup }) {
                                     <div className='bg-[#00000075] text-white text-center text-sm p-4  absolute bottom-0 w-full'>{data?.data?.response[0]?.discription}</div>
                                 </div>
                             </div>
-                            {!liked && <div className='w-[65%] sm:w-[35%] p-4 pl-2 flex flex-col justify-between'>
+                            {!liked && <div className='w-[100%] p md:w-[35%] p-4 pl-2 flex flex-col justify-between'>
 
                                 <div className='flex '>
                                     <div className='w-[32px] h-[32px] rounded-full '>
@@ -257,11 +260,14 @@ function PostView({ postId, popup }) {
                                                         <div className='w-[35px]  h-[35px] z-20 rounded-full bg-gray-400'>
 
                                                             {item.profile !== "null" ?
-                                                                <img src={PATH + item.profile} className='object-cover rounded-full w-full h-full ' alt="" />
+                                                                <img src={PATH + item.profile} className='object-cover  rounded-full w-full h-full ' alt="" />
                                                                 : <IoPersonCircleOutline className='w-full  text-gray-500 text-[60px]'></IoPersonCircleOutline>
                                                             }
                                                         </div>
-                                                        <p className='ml-3 font-semibold'>{item.name}</p>
+                                                        <Link  className='font-semibold pl-3' key={index}
+                                                        to={`${item.id != userInfo ? "/userProfile" : "/profile"}`} state={{ user: item.id}}>{item.name}</Link>
+                                                        {/* <p className='ml-3 font-semibold'>{item.name}</p> */}
+                                                        {/* <p className='ml-3 font-semibold'>{item.id}</p> */}
                                                     </div>
                                                 )
                                             })

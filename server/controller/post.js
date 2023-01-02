@@ -350,7 +350,8 @@ module.exports = {
             {
                 $project:{
                     name:'$userinfo.username',
-                    profile:'$userinfo.profile'
+                    profile:'$userinfo.profile',
+                    id:'$userinfo._id'
                 }
             }
            ]).then((response)=>{

@@ -14,6 +14,7 @@ import Search from "./pages/search";
 import Addpost from "./pages/addpost";
 import UserBlock from "./component/adminHome/userBlock";
 import PostBlock from "./component/adminHome/postBlock";
+import Error404 from "./component/Error/404";
 import Post from "./component/post/postpop";
 import Chat from "./pages/chat";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -58,6 +59,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<UserSignup />} />
           <Route path="/login" element={<UserLogin />} />
+          <Route path="*" element={<Error404 />} />
           <Route path="/forgotPassword" element={<Forgotpassword />} />
           <Route path="/" element={<Homemain />}>
           <Route path="/home" element={<HomePage />} />
@@ -69,12 +71,10 @@ function App() {
           <Route path="/notification" element={<NotificationSm />} />
           </Route>
           {/* <Route path="/post" element={<Post/>}/> */}
-        </Routes>
-      </AppContext.Provider>
-      </NotificationCountContext.Provider>
-      </QueryClientProvider>
+        {/* </Routes> */}
+      
       {/* </UserContext.Provider> */}
-      <Routes>
+      {/* <Routes> */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/register" element={<AdminSignup />} />
         <Route path="/admin" element={<AdminHome />}>
@@ -82,6 +82,9 @@ function App() {
             <Route path='/admin/post' element={<PostBlock />}></Route>
          </Route>
       </Routes>
+      </AppContext.Provider>
+      </NotificationCountContext.Provider>
+      </QueryClientProvider>
     </BrowserRouter>
 
   );
