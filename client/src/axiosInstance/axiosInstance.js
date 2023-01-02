@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: 'https://vibing.tk/api/',
-    // baseURL: 'http://localhost:4000/api/',
+    // baseURL: 'https://vibing.tk/api/',
+    baseURL: 'http://localhost:4000/api/',
     header:{
         "Content-Type":"application/json"
     }
@@ -10,8 +10,8 @@ const axiosInstance = axios.create({
 
 
 const axios_two = axios.create({
-    baseURL: 'https://vibing.tk/api/'
-    // baseURL: 'http://localhost:4000/api/'
+    // baseURL: 'https://vibing.tk/api/'
+    baseURL: 'http://localhost:4000/api/'
 });
 
 

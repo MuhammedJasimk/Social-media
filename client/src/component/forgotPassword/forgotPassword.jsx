@@ -8,11 +8,12 @@ import Countdown from 'react-countdown';
 const PATH = process.env.REACT_APP_PUBLIC_FOLDER
  
 let BackgroundImage={
-    // backgroundImage:url('./images/login-page.jpg')
+    backgroundImage:`url(./images/forgot-01.png)`,
     backgroundSize:'cover',
+    backgroundRepeat: 'no-repeat',
     backgroundPositionX:'-250px',
-     backgroundPositionY:'-150px',
-    backgroundImage: `url(${PATH }forgot-01.png)`
+    backgroundPositionY:'-150px',
+    // backgroundImage: `url(${PATH }forgot-01.png)`
 }
 
 function ForgotPassword() {
@@ -90,8 +91,8 @@ function ForgotPassword() {
 
     return (
         <div className='min-h-screen flex-col flex justify-center items-center bg-slate-100' style={BackgroundImage}>
-            <div className='container mx-auto flex  justify-end'>
-            <div className='rounded-xl flex flex-col justify-center text-center shadow-light p-6 bg-[#ffffffad] min-h-[50vh] w-[50%]'>
+            <div className='container mx-auto flex justify-center  md:justify-end'>
+            <div className='rounded-xl flex flex-col justify-center text-center shadow-light p-6 bg-[#ffffffad] min-h-[50vh] w-[90%] md:min-h-[50vh] md:w-[50%]'>
                 <p className='font-semibold text-lg'>Forgot Password ?</p>
                 <p className='text-gray-500'>No Worries, we'll send you reset instruction</p>
                 <div className="mb-3 text-left">

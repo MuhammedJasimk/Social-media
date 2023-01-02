@@ -4,9 +4,9 @@ import { axiosInstance, axios_two } from "../../axiosInstance/axiosInstance";
 
 const style = {
     position: 'fixed',
-    top: '20vh',
-    left: '35%',
-    right: '35%',
+    // top: '20vh',
+    // left: '35%',
+    // right: '35%',
     height: '60vh',
     transform: 'transilate(-50%,-50%)',
     // backgroundColor:'#fff',
@@ -47,8 +47,8 @@ function FollowList({ props, onclose, value }) {
     return (
         <div>
             <div style={overLay} />
-            <div className='rounded' style={style}>
-                <div className='bg-white max-h-[350px] overflow-auto px-3 py-6 rounded-lg'>
+            <div className='rounded top-[10vh] left-[10%] right-[10%] md:top-[20vh] md:left-[35%] md:right-[35%]' style={style}>
+                <div className='bg-white  max-h-[350px] overflow-auto px-3 py-6 rounded-lg'>
                     <p className='cursor-pointer absolute top-[10px] right-[10px]' onClick={onclose}>X</p>
                     <div className='max-h-full  overflow-auto'>
                         <p className='font-semibold text-xl text-center'>{props}</p>
