@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserSignup from "./pages/userSignup";
 import UserLogin from "./pages/userLogin";
+import NotificationSm from "./pages/notificationSM";
 import AdminLogin from "./pages/adminLogin";
 import HomePage from "./pages/homePage";
 import AdminHome from "./adminPages/admintemplate";
@@ -65,6 +66,7 @@ function App() {
           <Route path="/Addpost" element={<Addpost />} />
           <Route path="/search" element={<Search />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/notification" element={<NotificationSm />} />
           </Route>
           {/* <Route path="/post" element={<Post/>}/> */}
         </Routes>

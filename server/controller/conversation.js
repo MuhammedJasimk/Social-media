@@ -7,10 +7,11 @@ module.exports = {
         console.log(req.body);
 
         if (typeof(req.body.receiverId) === "object"){
-            console.log("array");
+            console.log("array"); 
             req.body.receiverId =req.body.receiverId[0]
         }
         
+
         let conversaton = await Conversation.findOne({ members: { $all: [req.body.senderId, req.body.receiverId] } })
         console.log(conversaton);
         if (conversaton == null) {

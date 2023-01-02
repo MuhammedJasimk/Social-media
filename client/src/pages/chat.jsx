@@ -26,7 +26,7 @@ function Chat() {
 
     return (
 
-        <div className='sm:flex container py-5'>
+        <div className='sm:flex container py-5 min-h-[85vh]	'>
             <div className='sm:w-[40%] p-4'>
             <div className='sm:h-[80vh]'>
             <div className='px-4 py-2 shadow-light  bg-white rounded-full'>

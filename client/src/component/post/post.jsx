@@ -106,7 +106,7 @@ function Post() {
 }
   return (
     <div className='bg-white h-[90vh]'>
-    <div className='flex justify-center items-center h-full bg-no-repeat' style={{backgroundImage:`url(${PATH}wave.png)`}}>
+    <div className='flex justify-center items-center h-full bg-no-repeat' style={{backgroundImage:`url(../images/wave.png)`}}>
                 {/* <div className='text-right cursor-pointer' onClick={() => { setIsPost(false) }}>
                     <p className='text-lg text-gray-400'>X</p>
                 </div> */}

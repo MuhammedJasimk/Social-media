@@ -40,7 +40,7 @@ function Nav() {
         { title: <IoSearchOutline />, path: "/search" },
         { title: <IoAddCircleOutline />, path: "/Addpost" },
         { title: <IoChatbubbleOutline />, path: "/chat" },
-        { title: <IoHeartOutline />, path: "/home" }
+        { title: <IoHeartOutline />, path: "/notification" }
     ] 
 
     let userInfo = localStorage.getItem("user")
