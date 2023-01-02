@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import { json } from 'react-router-dom';
 import { axiosInstance, axios_two } from "../../axiosInstance/axiosInstance";
+import {useNavigate,Link}from "react-router-dom";
 
 const style = {
     position: 'fixed',
@@ -61,9 +62,14 @@ function FollowList({ props, onclose, value }) {
                                         <div className='bg-gray-200 h-[40px] w-[40px] rounded-full'>
                                             <img src={PATH + item.profile} className='object-cover rounded-full w-full h-full ' alt="" />
                                         </div>
-                                        <div className='ml-3'>
+                                        <div className='ml-2'>
+                                <Link  className='font-semibold' key={index}
+                                  to={"/userProfile"} state={{ user: item._id}}>{item.first_name}</Link>
+                                    <p className='text-[10px] text-gray-500'>{item?.username}</p>
+                                </div>
+                                        {/* <div className='ml-3'>
                                             <p>{item?.username}</p>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 )
 
