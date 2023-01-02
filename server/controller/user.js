@@ -364,7 +364,7 @@ module.exports = {
             // console.log("req.query.user");
             // console.log(req.query.user);
             let user = await User.findOne({ _id: ObjectId(req.query.user) })
-            let userData = await Post.find({ userId: req.query.user, isBlock: false })
+            let userData = await Post.find({ userId: req.query.user, isBlock: false }).sort({updatedAt:-1})
             // console.log("user fetch infooooooo");
             // console.log(userData);
             // console.log(user);
@@ -401,12 +401,18 @@ module.exports = {
     unfollow: async (req, res) => {
         console.log("users Unfollow");   
         console.log(req.body);
+        console.log(req.body.receiverId);
+        console.log(typeof(req.body.receiverId));
+        if (typeof(req.body.receiverId) === "object"){
+            console.log("array");
+            req.body.receiverId =req.body.receiverId[0]
+        }
         try {
             await User.updateOne({ _id: ObjectId(req.body.userId) },
                 {
                     $pull: { following: req.body.receiverId }
                 })
-            await User.updateOne({ _id: req.body.receiverId },
+            await User.updateOne({ _id: req.body.receiverId }, 
                 {
                     $pull: { followers: req.body.userId }
                 }).then(() => {
